@@ -1,0 +1,14 @@
+
+h1{
+		text-align:center;
+  }
+
+
+table.bordasimples {
+						border-collapse: collapse;
+					}
+
+table.bordasimples tr td {
+								border:1px ;
+							
+						 }

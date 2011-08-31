@@ -1,0 +1,92 @@
+<script language="JavaScript">
+function imprimir(){
+
+window.print()
+}
+
+</script>
+		
+<style type="text/css">
+
+h1{
+		text-align:center;
+  }
+
+table{
+		font-size:12px;
+		text-align:center;
+	 }
+.botao {
+		
+		margin:50px;
+		padding:5px;
+	   }
+
+
+</style>
+{% extends 'base.html' %}
+{% block subtitle %}
+    <center> Caminhada do Saber </center>
+{% endblock subtitle %}
+{% block conteudo %}
+<center>
+<table class="form" frame="box" border="2">
+    <td colspan="8" style="text-align: center; " bgcolor="#69b92d"> Relatorio de Estudantes </td></tr> 
+	<tr>
+		<th>Número</th>
+		<th>Nome</th>
+		<th>CPF</th>
+		<th>Telefone</th>
+		<th>Tamanho da Camisa</th>
+		<th>Deficiência</th>
+		<th>Qual</th>
+	</tr>
+	<tr>
+		<td>		
+			{% for inscricao in i %}
+				{{ inscricao.numeroInscricao }}<br>
+			{% endfor %}
+		</td>
+		
+		<td>
+			{% for inscricao in i %}
+				{{ inscricao.nome }}<br>
+			{% endfor %}	
+		</td>
+
+		<td>
+			{% for inscricao in i %}
+				{{ inscricao.cpf }}<br>
+			{% endfor %}
+		</td>
+
+		<td>
+			{% for inscricao in i %}
+				{{ inscricao.telefone }}<br>
+			{% endfor %}	
+		</td>
+
+		<td>
+			{% for inscricao in i %}
+				{{ inscricao.tamanhocamisa }}<br>
+			{% endfor %}
+		</td>
+
+		<td>
+			{% for inscricao in i %}	
+				{{ inscricao.deficienciaF}}<br>
+			{% endfor %}
+		</td>
+
+		<td>
+			{% for inscricao in i %}	
+				{{inscricao.qual}}<br>	
+			{% endfor %}
+		</td>
+	</tr>	
+</table> 
+<input class="botao" type="button" value="Imprimir" OnClick="imprimir()"><br><br>
+<a href="/mudar_senha/">Clique Aqui Para Mudar Sua Senha!</a><br />
+<a href="/logout/">Para Terminar Sua Sessão Clique Aqui!</a><br /><br />
+</center>
+{% endblock conteudo %}

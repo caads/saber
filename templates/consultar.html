@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block subtitle %}
+    <center> Consultar Inscrição </center>
+{% endblock subtitle %}
+{% block conteudo %}
+		<form id="form" action="/resultado/" method="post">{% csrf_token %} 
+        	<label for="codigo">Digite o CPF a ser pesquisado:</label><br />
+            <input type="text" id="codigo" name="codigo" size="50" maxlength="11"/>
+			<input id="botao" type="submit" name="Submit" value="Consultar">
+        </form>
+{% endblock conteudo %}

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block subtitle %}
+    <center> Mudar senha concluido </center>
+{% endblock subtitle %}
+{% load i18n %}
+{% block titulo %}{% trans "Senha alterada" %} - {{ block.super }}{% endblock %}
+{% block h1 %}{% trans "Senha alterada" %}{% endblock %}
+{% block conteudo %}{{ block.super }}
+<b>A sua senha foi alterada com sucesso!</b>
+{% endblock conteudo %}

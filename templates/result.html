@@ -1,0 +1,57 @@
+<script language="JavaScript">
+		function imprimir(){
+			window.print()
+		}
+	</script>
+
+	<style type="text/css"> 
+	h1 {
+			text-align:center;
+			padding: 30px 0px 0px 0px;
+	   }
+	.botao {
+				margin:50px;
+				padding:5px;
+	   	   }
+	</style>
+{% extends 'base.html' %}
+{% block subtitle %}
+    <center> Consultar inscrição </center>
+{% endblock subtitle %}
+{% block conteudo %}
+<p><strong>>{{ mensagem }}</strong></p>
+		<table border=1 cellspacing=0 cellpadding=8 bordercolor="#000000" class="tabela"> 
+			
+               <tr>
+					<td><b>Nome </b></td>
+                    <td>{{ inscricao.nome }}</td>
+				</tr>
+								
+				<tr>
+					<td><b>CPF</b></td>					                               
+					<td>{{ inscricao.cpf }}</td>
+				</tr>
+
+				<tr>
+                	<td><b>Telefone</b></td>                      
+                    <td>{{ inscricao.telefone }}</td>
+				</tr>
+     
+				<tr>
+                	<td><b>Tamanho da Camisa</b></td>
+    				<td>{{ inscricao.tamanhocamisa }}</td>
+				</tr>
+                
+				<tr>
+		        	<td><b>Deficiência</b></td>
+	                <td>{{ inscricao.deficienciaF }}</td>
+                </tr>
+
+				<tr>
+		        	<td><b>Qual</b></td>
+	                <td>{{ inscricao.qual }}</td>
+                </tr>
+                  
+         </table>
+		<input class="botao" type="button" value="Imprimir" OnClick="imprimir()">
+{% endblock conteudo %}
